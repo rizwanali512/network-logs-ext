@@ -1,27 +1,88 @@
-# BugReporterExtension
+# Chrome Extension: Console & Network Logs Capture
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.5.
+This Chrome extension captures **console logs** and **network requests** from the active tab, allowing users to download logs in `.txt` and `.har` formats for debugging purposes.
 
-## Development server
+## 🚀 Features
+- 📜 Capture **console logs** and download them as a `.txt` file.
+- 🌐 Capture **network requests** and download them as a `.har` file.
+- 🛠 Simple UI with a popup to trigger log capture.
+- ✅ Asynchronous handling for efficient data collection.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## 📥 Installation & Setup
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### **1️⃣ Clone the Repository**
+```sh
+git clone https://github.com/rizwanali512/network-logs-ext.git
+cd network-logs-ext
+```
 
-## Build
+### **2️⃣ Load the Extension in Chrome**
+1. Open **Google Chrome**.
+2. Navigate to `chrome://extensions/`.
+3. Enable **Developer Mode** (toggle in the top-right corner).
+4. Click **Load Unpacked** and select the extension folder.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+## 🛠 Usage Instructions
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### **Capturing Logs**
+1. Click the **extension icon** in Chrome's toolbar.
+2. Click **"Capture Console Logs"** to download `console_logs.txt`.
+3. Click **"Capture Network Logs"** to download `network_logs.txt`.
+4. Click **"Download HAR"** to save network logs as a `.har` file.
 
-## Running end-to-end tests
+### **File Outputs**
+- **console_logs.txt** → Logs captured from the browser's console.
+- **network_logs.txt** → Network requests in plain text.
+- **network_logs.har** → Network request logs in HAR format.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+---
 
-## Further help
+## 🏗 Project Structure
+```
+📂 extension
+ ├── 📂 icons               # Extension icons
+ ├── background.js      # Handles message passing & network logs
+ ├── content.js         # Captures console logs
+ ├── popup.js           # UI interactions & downloads
+ ├── popup.html             # Popup UI
+ ├── manifest.json          # Extension metadata & permissions
+ ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
+
+## 🛠 Development & Debugging
+
+### **Live Debugging**
+1. Open `chrome://extensions/`.
+2. Locate your extension and click **"Background Page"** under `Inspect views`.
+3. Open **Console** to check logs & debug messages.
+
+### **Updating the Extension**
+- After modifying code, **refresh the extension** in `chrome://extensions/`.
+
+---
+
+## 📜 Permissions
+The extension requests the following permissions:
+- **tabs** → To query active tabs for sending messages.
+- **webRequest** → To capture network requests.
+- **storage** → (If needed) To store log history.
+- **activeTab** → To interact with the active tab.
+
+---
+
+## 📄 License
+This project is licensed under the **MIT License**. See the `LICENSE` file for details.
+
+---
+
+## 📬 Contact & Support
+For any issues or contributions, feel free to open an **Issue** or submit a **Pull Request** on GitHub.
+
+📧 Email: [rizwandiplana@gmail.com](mailto:rizwandiplana@gmail.com)  
+🔗 GitHub: [rizwanali512](https://github.com/rizwanali512)
+
