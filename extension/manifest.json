@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Bug Reporter",
+  "version": "1.0",
+  "description": "Capture bugs, screenshots, and logs automatically",
+  "permissions": ["scripting", "debugger","tabs", "activeTab", "storage", "downloads", "webRequest", "webRequestBlocking"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"],
+      "run_at": "document_start"
+
+    }
+  ]
+}
+
+
